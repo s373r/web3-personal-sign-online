@@ -8,7 +8,7 @@
   "scripts": {
     "start": "parcel ${npm_package_config_entryPoint}",
     "prebuild": "rm -rf ./dist",
-    "build": "parcel build ${npm_package_config_entryPoint} --dist-dir ${npm_package_config_distDirectory}"
+    "build": "parcel build ${npm_package_config_entryPoint} --dist-dir ${npm_package_config_distDirectory} --public-url '.'"
   },
   "devDependencies": {
     "assert": "2.0.0",
