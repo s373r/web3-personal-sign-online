@@ -25,15 +25,19 @@ async function main() {
 
         const hexData = `0x${Buffer.from(data, 'utf8').toString('hex')}`;
 
-        console.log('   data', data);
-        console.log('hexData', hexData);
+        console.log('--- --- --- --- ---')
+        console.log('     data', data);
+        console.log('  hexData', hexData);
 
-        const sign = await window.ethereum.request({
+        const signature = await window.ethereum.request({
             method: 'personal_sign',
             params: [hexData, account],
         });
 
-        alert(`Input:\n${data}\n\nAccount:\n${account}\n\nSignature:\n${sign}`);
+        console.log('account', account)
+        console.log('signature', signature);
+
+        alert(`Input:\n${data}\n\nAccount:\n${account}\n\nSignature:\n${signature}\n\nCheck console logs if you cannot copy values`);
     };
 }
 
