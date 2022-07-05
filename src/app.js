@@ -5,8 +5,6 @@ async function main() {
 
     [account] = await window.ethereum.request({ method: 'eth_requestAccounts' });
 
-    console.log(account);
-
     window.ethereum.on('accountsChanged', (accounts) => {
         [account] = accounts;
     });
@@ -26,8 +24,8 @@ async function main() {
         const hexData = `0x${Buffer.from(data, 'utf8').toString('hex')}`;
 
         console.log('--- --- --- --- ---')
-        console.log('     data', data);
-        console.log('  hexData', hexData);
+        console.log('data', data);
+        console.log('hexData', hexData);
 
         const signature = await window.ethereum.request({
             method: 'personal_sign',
